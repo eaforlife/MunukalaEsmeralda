@@ -1,0 +1,49 @@
+body, html {
+	height: 100vh;
+}
+
+html {
+	overflow-x: hidden;
+}
+
+#navbar-top {
+	transition: 0.2s;
+}
+
+html {
+	scroll-behavior: smooth;
+	transition: 0.3s;
+}
+
+#content .container {
+	background-color: #fff;
+}
+
+#footer {
+	height: 30vh;
+	background-color: #1B2631;
+}
+
+/* SVG */
+#l-shoulder {
+	background-image: url('../style/img/leafshoulder.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	height: 30px;
+	width: 20px;
+	margin: 0;
+	padding: 0;
+}
+
+#r-shoulder {
+	background-image: url('../style/img/leafshoulder.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	height: 30px;
+	width: 20px;
+	margin: 0;
+	padding: 0;
+	transform: rotate(180deg);
+}

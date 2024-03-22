@@ -1,0 +1,58 @@
+.parallax-bg-main, .parallax-bg-plant {
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+.parallax-bg-main {
+	background-image: url('../style/img/bg-hexel.jpg');
+	background-color: #273746;
+	min-height: 100vh;
+}
+
+.parallax-bg-plant {
+	background-image: url('../style/img/parallax-bg-002.jpg');
+	background-color: #273746;
+	min-height: 500px;
+}
+
+.card-img-top:hover {
+	transform:scale(1.15,1.15);
+	transition: 0.3s;
+}
+
+#plant-list-group:hover {
+	transform:scale(1.05,1.12);
+	transition: 0.1s;
+}
+
+#plant-database-out {
+	max-height: 250px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+#title {
+	position: absolute;
+	left: 0;
+	top: 40%;
+	padding: 0;
+	margin: 0;
+}
+.title-text {
+	font-family: 'Barlow Semi Condensed' !important;
+	background-color: #212F3D;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1300px) {
+	.parallax-bg-main, .parallax-bg-plant {
+		background-attachment: scroll;
+		min-height: 400px;
+	}
+	#title {
+		top: 15%;
+	}
+}
