@@ -1,0 +1,62 @@
+{
+	"short_name": "MunukalaEsmeralda",
+	"name": "Munukala Esmeralda",
+	"description": "Plant database and care guide",
+	"start_url": "pwa_index.html",
+	"display": "standalone",
+	"background_color": "#82E0AA",
+	"theme_color": "#EAFAF1",
+	"orientation": "portrait-primary",
+	"icons": [
+		{ 
+			"src": "./style/icons/icon-72x72.png",
+			"type": "image/png",
+			"sizes": "72x72",
+			"purpose": "maskable"
+		},
+		{ 
+			"src": "./style/icons/icon-96x96.png",
+			"type": "image/png",
+			"sizes": "96x96",
+			"purpose": "maskable"
+		},
+		{ 
+			"src": "./style/icons/icon-128x128.png",
+			"type": "image/png",
+			"sizes": "128x128",
+			"purpose": "maskable"
+		},
+		{ 
+			"src": "./style/icons/icon-144x144.png",
+			"type": "image/png",
+			"sizes": "144x144",
+			"purpose": "maskable"
+		},
+		{ 
+			"src": "./style/icons/icon-192x192.png",
+			"type": "image/png",
+			"sizes": "192x192",
+			"purpose": "maskable"
+		}
+		,
+		{ 
+			"src": "./style/icons/icon-384x384.png",
+			"type": "image/png",
+			"sizes": "384x384",
+			"purpose": "maskable"
+		},
+		{ 
+			"src": "./style/icons/icon-512x512.png",
+			"type": "image/png",
+			"sizes": "512x512",
+			"purpose": "maskable"
+		}
+	],
+	"intent_filters": {
+		"scope_url_scheme": "https",
+		"scope_url_host": "hexelapp.000webhostapp.com",
+		"scope_url_path": "/"
+	},
+	"scope_url": "/"
+	
+}
