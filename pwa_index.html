@@ -1,187 +1,187 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="canonical" href="https://hexelapp.000webhostapp.com/pwa_index.html">
-		<link rel="stylesheet" href="./style/bootstrap.min.css"><!-- Bootstrap -->
-		<link href='https://fonts.googleapis.com/css?family=Barlow Semi Condensed' rel='stylesheet'><!-- Font Face -->
-		<link rel="manifest" href="./manifest.json">
-		<meta name="theme-color" content="#EAFAF1"/>
-		<!-- iOS Support -->
-		<link rel="apple-touch-icon" href="./style/icons/icon-144x144.png">
-		<meta name="apple-mobile-web-app-status-bar" content="#EAFAF1">
-		<link rel="stylesheet" href="./style/hexel.index.css"><!-- CSS -->
-		<link rel="stylesheet" href="./style/hexel.all.min.css"><!-- CSS -->
-		<title>Plant Database</title>
-	</head>
-	<body>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#hexelnavbar" aria-controls="hexelnavbar" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="hexelnavbar">
-				<a class="navbar-brand" href="#">
-				<img src="./style/img/hexel-logo.svg" class="d-inline-block align-top" width="30" alt="HEXEL" loading="lazy">
-				Munukala Esmeralda
-				</a>
-				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-					<li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-						<a class="nav-link" href="#top-of-page">Plant Database</a>
-					</li>
-					<li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-						<a class="nav-link" href="./pwa_about.html">About</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-		
-		<div class="parallax-bg-plant">
-			<div class="container-fluid" id="title">
-				<div class="row">
-					<div class="col-sm-auto mx-auto text-center text-white">
-						<h1 class="text-capitalize px-5 py-3 title-text shadow p-2 mb-3">Munukala Esmeralda</h1>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div id="top-of-page"></div>
-		<div class="container-fluid my-5 justify-content-center">
-			<div class="row">
-				<div class="col-sm-12">
-					<div class="accordion" id="plantAccordion">
-						<div id="pwa-out" style="min-height:90vh;"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div class="container-fluid" id="footer">
-			<div class="row">
-				<div class="col-sm-6 mx-auto mt-5 d-flex justify-content-center align-content-center">
-					<div class="row my-3">
-						<div class="container">
-							<a href="#top-of-page" class="btn btn-outline-light" role="button">
-							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z"/>
-							</svg>
-							&nbsp;<small>Back To Top</small>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-6 text-center mx-auto text-light">
-					<p><small>All Rights Reserved &copy; 2020 MUNUKALA ESMERALDA | App version 1.0.31</small></p>
-				</div>
-			</div>
-		</div>
-		
-		<!-- Modal -->
-		<div class="modal fade" id="imgViewer" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title"></h5>
-						<button type="button btn-sm" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="d-flex justify-content-center align-items-center fixed-bottom mb-5">
-			<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-				<div class="toast-header">
-					<strong class="mr-auto">Munukala Esmeralda</strong>
-					<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="toast-body"></div>
-			</div>
-		</div>
-		
-		<!-- The core Firebase JS SDK is always required and must be listed first -->
-		<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
-
-		<!-- TODO: Add SDKs for Firebase products that you want to use
-			 https://firebase.google.com/docs/web/setup#available-libraries -->
-		<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-messaging.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
-
-		<script>
-		  // Your web app's Firebase configuration
-		  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-		  var firebaseConfig = {
-			apiKey: "AIzaSyAOoZFGHJq8CncRpK-WCr67MXujuqnAHNY",
-			authDomain: "hexel-pwa.firebaseapp.com",
-			databaseURL: "https://hexel-pwa.firebaseio.com",
-			projectId: "hexel-pwa",
-			storageBucket: "hexel-pwa.appspot.com",
-			messagingSenderId: "502763909830",
-			appId: "1:502763909830:web:95f46a21516dc530669dc7",
-			measurementId: "G-MQ1MGXF9KH"
-		  };
-		  // Initialize Firebase
-		  firebase.initializeApp(firebaseConfig);
-		  firebase.analytics();
-		  const messaging = firebase.messaging();
-		  const dbFirebase = firebase.firestore();
-		  
-		  messaging.requestPermission().then(function() {
-			 console.log('Have permission'); 
-			 return messaging.getToken();
-		  }).then(function(currentToken) {
-			  console.log('Token: ', currentToken);
-		  }).catch(function(err) {
-			  console.log('Error: ');
-		  });
-		  
-		  messaging.onMessage(function(payload) {
-			 console.log('onMessage: ', payload);
-		  });
-		</script>
-		<script src="./script/hexel-pwa-app.js"><!-- PWA --></script>
-		<script src="./script/hexel-pwa-firebase.js"><!-- Hexel Firebase --></script>
-		<script src="./script/pwa_ui.js"></script>
-		<script src="./script/jquery-3.5.1.min.js"><!-- JQuery --></script>
-		<script src="./script/bootstrap.bundle.min.js"><!-- Bootstrap --></script>
-		<script>
-			// Delete this script after switching to firebase database
-			$('.toast').toast({
-				animation: true,
-				autohide: true,
-				delay: 5000
-			});
-			
-			$('.toast').on('hidden.bs.toast', function() {
-				$(this).find('.toast-body').text("");
-			});
-			
-			$('#imgViewer').on('show.bs.modal', function(evt) {
-				var btn = $(evt.relatedTarget);
-				var imgUrl = btn.data('path');
-				var imgName = btn.data('plant');
-				var modal = $(this);
-				modal.find('.modal-title').text(imgName.toUpperCase());
-				modal.find('.modal-body').html("<img src='" + imgUrl + "' class='d-block w-100'>");
-			});
-			
-			function sysNotif(str, loc) {
-				//console.log('I am called from notification: ', str);
-				$('.toast').find('.toast-body').text(str);
-				$('.toast').toast('show');
-				if(loc == 'top') {
-					document.location.hash = "#top-of-page";
-				} else {
-					document.location.hash = "#card-" + loc;
-				}
-			}
-		</script>
-	</body>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="canonical" href="https://hexelapp.000webhostapp.com/pwa_index.html">
+		<link rel="stylesheet" href="./style/bootstrap.min.css"><!-- Bootstrap -->
+		<link href='https://fonts.googleapis.com/css?family=Barlow Semi Condensed' rel='stylesheet'><!-- Font Face -->
+		<link rel="manifest" href="./manifest.json">
+		<meta name="theme-color" content="#EAFAF1"/>
+		<!-- iOS Support -->
+		<link rel="apple-touch-icon" href="./style/icons/icon-144x144.png">
+		<meta name="apple-mobile-web-app-status-bar" content="#EAFAF1">
+		<link rel="stylesheet" href="./style/hexel.index.css"><!-- CSS -->
+		<link rel="stylesheet" href="./style/hexel.all.min.css"><!-- CSS -->
+		<title>Plant Database</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#hexelnavbar" aria-controls="hexelnavbar" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="hexelnavbar">
+				<a class="navbar-brand" href="#">
+				<img src="./style/img/hexel-logo.svg" class="d-inline-block align-top" width="30" alt="HEXEL" loading="lazy">
+				Munukala Esmeralda
+				</a>
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+						<a class="nav-link" href="#top-of-page">Plant Database</a>
+					</li>
+					<li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+						<a class="nav-link" href="./pwa_about.html">About</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		
+		<div class="parallax-bg-plant">
+			<div class="container-fluid" id="title">
+				<div class="row">
+					<div class="col-sm-auto mx-auto text-center text-white">
+						<h1 class="text-capitalize px-5 py-3 title-text shadow p-2 mb-3">Munukala Esmeralda</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="top-of-page"></div>
+		<div class="container-fluid my-5 justify-content-center">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="accordion" id="plantAccordion">
+						<div id="pwa-out" style="min-height:90vh;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container-fluid" id="footer">
+			<div class="row">
+				<div class="col-sm-6 mx-auto mt-5 d-flex justify-content-center align-content-center">
+					<div class="row my-3">
+						<div class="container">
+							<a href="#top-of-page" class="btn btn-outline-light" role="button">
+							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z"/>
+							</svg>
+							&nbsp;<small>Back To Top</small>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6 text-center mx-auto text-light">
+					<p><small>All Rights Reserved &copy; 2020 MUNUKALA ESMERALDA | App version 1.0.31</small></p>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Modal -->
+		<div class="modal fade" id="imgViewer" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title"></h5>
+						<button type="button btn-sm" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="d-flex justify-content-center align-items-center fixed-bottom mb-5">
+			<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+				<div class="toast-header">
+					<strong class="mr-auto">Munukala Esmeralda</strong>
+					<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="toast-body"></div>
+			</div>
+		</div>
+		
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+
+		<!-- TODO: Add SDKs for Firebase products that you want to use
+			 https://firebase.google.com/docs/web/setup#available-libraries -->
+		<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-messaging.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+
+		<script>
+		  // Your web app's Firebase configuration
+		  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		  var firebaseConfig = {
+			apiKey: "<SECRET KEY>",
+			authDomain: "hexel-pwa.firebaseapp.com",
+			databaseURL: "https://hexel-pwa.firebaseio.com",
+			projectId: "hexel-pwa",
+			storageBucket: "hexel-pwa.appspot.com",
+			messagingSenderId: "502763909830",
+			appId: "1:502763909830:web:95f46a21516dc530669dc7",
+			measurementId: "G-MQ1MGXF9KH"
+		  };
+		  // Initialize Firebase
+		  firebase.initializeApp(firebaseConfig);
+		  firebase.analytics();
+		  const messaging = firebase.messaging();
+		  const dbFirebase = firebase.firestore();
+		  
+		  messaging.requestPermission().then(function() {
+			 console.log('Have permission'); 
+			 return messaging.getToken();
+		  }).then(function(currentToken) {
+			  console.log('Token: ', currentToken);
+		  }).catch(function(err) {
+			  console.log('Error: ');
+		  });
+		  
+		  messaging.onMessage(function(payload) {
+			 console.log('onMessage: ', payload);
+		  });
+		</script>
+		<script src="./script/hexel-pwa-app.js"><!-- PWA --></script>
+		<script src="./script/hexel-pwa-firebase.js"><!-- Hexel Firebase --></script>
+		<script src="./script/pwa_ui.js"></script>
+		<script src="./script/jquery-3.5.1.min.js"><!-- JQuery --></script>
+		<script src="./script/bootstrap.bundle.min.js"><!-- Bootstrap --></script>
+		<script>
+			// Delete this script after switching to firebase database
+			$('.toast').toast({
+				animation: true,
+				autohide: true,
+				delay: 5000
+			});
+			
+			$('.toast').on('hidden.bs.toast', function() {
+				$(this).find('.toast-body').text("");
+			});
+			
+			$('#imgViewer').on('show.bs.modal', function(evt) {
+				var btn = $(evt.relatedTarget);
+				var imgUrl = btn.data('path');
+				var imgName = btn.data('plant');
+				var modal = $(this);
+				modal.find('.modal-title').text(imgName.toUpperCase());
+				modal.find('.modal-body').html("<img src='" + imgUrl + "' class='d-block w-100'>");
+			});
+			
+			function sysNotif(str, loc) {
+				//console.log('I am called from notification: ', str);
+				$('.toast').find('.toast-body').text(str);
+				$('.toast').toast('show');
+				if(loc == 'top') {
+					document.location.hash = "#top-of-page";
+				} else {
+					document.location.hash = "#card-" + loc;
+				}
+			}
+		</script>
+	</body>
 </html>
